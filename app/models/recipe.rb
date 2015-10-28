@@ -14,4 +14,6 @@ class Recipe < ActiveRecord::Base
     accepts_nested_attributes_for :directions,
     							    reject_if: proc{ |attributes| attributes['step'].blank?},
     							    allow_destroy: true
+
+    belongs_to :user
 end
