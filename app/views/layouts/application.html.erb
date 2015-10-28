@@ -7,8 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+    <nav class="navbar navbar-default">
+	   <div class="container">
+		  <div class="navbar-brand">
+		    <%= link_to "Home", root_path %>	
+		  </div>
+		  <ul class="nav navbar-nav navbar-right">
+		  	<li><%= link_to "New", new_recipe_path %></li>
+		  	<li><%= link_to "Sign In", root_path %></li>	
+		  </ul>
+		</div>
+    </nav>
+ 
+    <div class="container">
+    	<% flash.each do |name, msg| %>
+           <%= content_tag(:div, msg)%>
+        <% end %>
+ 
+        <%= yield %>
 
-<%= yield %>
+    </div>
 
 </body>
 </html>
