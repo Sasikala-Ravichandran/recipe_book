@@ -8,8 +8,9 @@ class RecipesController < ApplicationController
 
 	def new
 		@recipe = Recipe.new
-	end
-
+		@recipe.ingredients.build
+		@recipe.directions.build
+    end
 	def create
 		@recipe = Recipe.new(recipe_params)
 		if @recipe.save
@@ -49,7 +50,9 @@ class RecipesController < ApplicationController
 	end
 
 	def recipe_params
-		params.require(:recipe).permit(:title, :description, :image)
+		params.require(:recipe).permit(:title, :description, :image, 
+			     ingredients_attributes: [:id, :name, :_destroy],
+			     directions_attributes: [:id, :step, :_destroy])
 	end
 
 end
