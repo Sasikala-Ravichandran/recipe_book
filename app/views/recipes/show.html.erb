@@ -1,3 +1,4 @@
+ 
 <div class="main_content">
  
   <div class="row" id="recipe_top">
@@ -37,12 +38,14 @@
      </div>
   </div>  
 
-   
+
    <div class="row">
      <div class="col-md-12">
-        <% if user_signed_in? %>
+        <% if user_signed_in?  %>
+          <% if current_user.email == @recipe.user.email%>
 	     	<%= link_to "Edit", edit_recipe_path, class: "btn btn-default"%>
 	        <%= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?"},class: "btn btn-default"%>
+            <% end %>
 		<% end %>
         <%= link_to "Home", root_path, class: "btn btn-default" %>
      </div>
