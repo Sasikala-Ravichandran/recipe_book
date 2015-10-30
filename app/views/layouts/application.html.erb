@@ -10,12 +10,12 @@
     <nav class="navbar navbar-default">
 	   <div class="container">
   		  <div class="navbar-brand">
-  		    <%= link_to "Home", root_path %>	
+  		    <%= link_to "Recipe Book", root_path %>	
   		  </div>
 
         <% if user_signed_in? %>
             <ul class="nav navbar-nav navbar-right">
-              <li><%= link_to "New", new_recipe_path %></li>
+              <li><%= link_to "New Recipe", new_recipe_path %></li>
               <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>  
             </ul>
         <% else %>
