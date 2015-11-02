@@ -1,28 +1,15 @@
-== README
+== RECIPE BOOK
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ An app allows signed in user to create their favourite recipes and share them to other users.This app uses nested forms technique (as each recipe has multiple ingredients and multiple steps of direction) along with image uploading
 
-Things you may want to cover:
+Gems used in this app:
 
-* Ruby version
+* devise for user authentication 
 
-* System dependencies
+* paperclip for image uploading
 
-* Configuration
+* simple_form for forms
 
-* Database creation
+* cocoon for dynamic nested forms
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+[View Demo in heroku](https://nameless-cove-7894.herokuapp.com/)
